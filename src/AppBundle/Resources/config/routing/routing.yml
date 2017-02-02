@@ -1,0 +1,25 @@
+
+app_product_create:
+    path: /product/create 
+    defaults:
+        _controller: AppBundle:Product:create
+
+show:
+    path: /product/show/{productId}
+    defaults:
+        _controller: AppBundle:Product:show
+
+update:
+    path: /product/update/{productId}
+    defaults:
+        _controller: AppBundle:Product:update
+
+delete:
+    path: /product/delete/{productId}
+    defaults:
+        _controller: AppBundle:Product:delete
+
+list:
+    path: /products
+    defaults:
+        _controller: AppBundle:Product:list

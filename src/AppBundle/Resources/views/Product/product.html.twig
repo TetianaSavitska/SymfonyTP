@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main class="container">
+        <nav class="nav">
+        	<ul>
+        		<li><a href="#">Home</a></li>
+        		<li><a href="#">Products</a></li>
+        	</ul>
+        </nav>
+        <article>
+        	<h1>{{product.title()}}</h1>
+        	<h3>Price: {{ product.price() }} €</h3>
+        	<p>{{ product.description() }}</p>
+        	<p> Added: 
+				{%	set	today	=	'now'	%}	
+				{{	today|date('d/m/Y')	}}
+			</p>
+        </article>
+    </main>
+{% endblock %}

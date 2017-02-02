@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Products</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body>
+    	<main class="container">
+    		<h1>Products</h1>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Price</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for product in product_list %}
+					<tr>
+						<td>{{ product.title }}</td>
+						<td>{{ product.price }}</td>
+						<td>
+							<a href="/product/update/{{ product.id }}">
+								<button type="button" class="btn btn-default btn-sm">
+					        		<span class="glyphicon glyphicon-pencil"></span> 
+					        	</button>
+				        	</a>
+				        </td>
+						<td>
+							<a href="/product/delete/{{ product.id }}">
+								<button type="button" class="btn btn-default btn-sm">
+		          					<span class="glyphicon glyphicon-trash"></span> 
+		        				</button>
+	        				</a>
+        				</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+			<h3>Create a new product</h3>
+			<form action="create" method="POST">
+				<input type="number" name="" value="" placeholder="">
+			</form>
+    	</main>
+    </body>
+</html>
